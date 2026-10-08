@@ -115,7 +115,7 @@ console.log(count);
 const double = (x) => {
   x * 2;
 };
-console.log(double(5));
+console.log(double(5)); // undefined
 
-console.log(typeof double);
+console.log(typeof double); // function
 ```
