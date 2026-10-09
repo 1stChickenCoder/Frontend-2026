@@ -101,6 +101,6 @@ if ("0") console.log("chạy"); // "chạy"
 if ([]) console.log("cũng chạy?"); // "cũng chạy"
 ```
 
-
 ### => `||` trả về giá trị truthy đầu tiên. Nếu không có cái nào truthy thì trả về vế cuối. 0 là falsy nên nó bỏ qua và lấy "a".
+
 ### => `&&` trả về giá trị falsy đầu tiên. Nếu tất cả đều truthy thì trả về vế cuối. "" là falsy nên dừng luôn ở đó; còn "x" truthy nên đi tiếp và trả về "y".
