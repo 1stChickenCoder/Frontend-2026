@@ -5,10 +5,33 @@ const isEven = (n) => n % 2 === 0;
 const isOdd = (n) => n % 2 !== 0;
 
 // max3(a, b, c)
-const max3 = (a, b, c) => Math.max(a, b, c);
+const max3 = (a, b, c) => {
+  if (typeof a !== 'number' || typeof b !== 'number' || typeof c !== 'number') {
+    return 'Error: All arguments must be numbers.';
+  }
+  if (a >= b && a >= c) {
+    return a;
+  } else if (b >= a && b >= c) {
+    return b;
+  } else {
+    return c;
+  }
+}
 
-// min3(a, b, c)
-const min3 = (a, b, c) => Math.min(a, b, c);
+// countVowels
+const countVowels = (text) => {
+  if (typeof text !== 'string') {
+    return 'Error: Input must be a string.';
+  }
+  const vowels = 'aeiouAEIOU';
+  let count = 0;
+  for (let char of text) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
 
 // isPrime(n)
 const isPrime = (n) => {
@@ -31,27 +54,56 @@ const factorial = (n) => {
 };
 
 // reverseString(text)
-const reverseString = (text) => text.split('').reverse().join('');
+const reverseString = (text) => {
+  if (typeof text !== 'string') {
+    return 'Error: Input must be a string.';
+  }
+  let reversed = '';
+  for (let i = text.length - 1; i >= 0; i--) {
+    reversed += text[i];
+  }
+  return reversed;
+}
 
 // isPalindrome(text)
 const isPalindrome = (text) => {
-  const reversed = reverseString(text);
-  return text === reversed;
+  const lower = text.toLowerCase();
+  return lower === reverseString(lower);
 };
-
 // calculate(a, b, operation)
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+const multiply = (a, b) => a * b;
+const divide = (a, b) => a / b;
+
 const calculate = (a, b, operation) => {
   switch (operation) {
     case 'add':
-      return a + b;
+      return add(a, b);
     case 'subtract':
-      return a - b;
+      return subtract(a, b);
     case 'multiply':
-      return a * b;
+      return multiply(a, b);
     case 'divide':
       if (b === 0) return undefined; // Avoid division by zero
-      return a / b;
+      return divide(a, b);
     default:
       return undefined; // Invalid operation
   }
 };
+// applyTwice(fn, x)
+const applyTwice = (fn, x) => fn(fn(x));
+
+// transformAll(arr, fn)
+const transformAll = (arr, fn) => {
+  const result = [];
+  for (const item of arr) {
+    result.push(fn(item));
+  }
+  return result;
+};
+
+console.log(max3(5, 5, 3)); // 5
+console.log(isPalindrome('Level')); // true
+console.log(applyTwice((n) => n * 3, 2)); // 18
+console.log(transformAll([1, 2, 3], (n) => n * 10)); // [10, 20, 30]
