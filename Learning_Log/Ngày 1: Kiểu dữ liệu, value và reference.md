@@ -22,6 +22,7 @@
 
 ## 🗓️ Kế hoạch buổi học (2,5 giờ)
 
+> [!IMPORTANT]
 > **🎯 Mục tiêu hôm nay:** nhìn một dòng gán hoặc so sánh bất kỳ và biết ngay nó **copy giá trị** hay **copy "địa chỉ"**.
 >
 > Đây là gốc của rất nhiều lỗi React kiểu *"setState rồi mà UI không cập nhật"* hay *"useEffect chạy vô hạn"*.
@@ -52,6 +53,7 @@ JavaScript có **7 kiểu primitive**:
 
 Mọi thứ còn lại là **object**: object thường, array, function, `Date`, `Map`, `Set`.
 
+> [!TIP]
 > 📦 **Hình dung biến là một cái hộp:**
 > - Với **primitive** → trong hộp chứa *chính giá trị*.
 > - Với **object** → trong hộp chỉ chứa *tờ giấy ghi địa chỉ căn nhà* (reference); căn nhà thật nằm chỗ khác trong bộ nhớ.
@@ -68,6 +70,7 @@ user2.name = "Lan";
 console.log(user1.name); // "Lan"
 ```
 
+> [!NOTE]
 > Primitive là **bất biến**: `str.toUpperCase()` không sửa `str` mà trả về chuỗi mới.
 > Object thì **sửa được tại chỗ** (mutate).
 
@@ -97,6 +100,7 @@ typeof []           // "object"   <- kiểm tra mảng bằng Array.isArray([])
 typeof function(){} // "function"
 ```
 
+> [!WARNING]
 > ⚠️ Hai cái bẫy kinh điển: `typeof null === "object"` và `typeof [] === "object"`.
 > Muốn kiểm tra mảng, luôn dùng `Array.isArray()`.
 
