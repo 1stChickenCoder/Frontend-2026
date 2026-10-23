@@ -19,6 +19,6 @@ const pick = (obj, keys) => {
 
 const user = { name: "Hoan", tags: ["js", "css"] };
 const renameTag = (user, oldTag, newTag) => {
-  return ({ tags, ...user, tags: newTag });
+    
 };
 console.log(renameTag(user, user.tags, user.tags));
